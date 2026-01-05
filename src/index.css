@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+:root {
+  font-family: DM Sans, Bricolage Grotesque, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  color-scheme: light dark;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(243, 96%, 9%);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: auto;
+  min-width: 320px;
+  max-width: 1440px;
+  min-height: 100vh;
+}
