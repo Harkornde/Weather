@@ -1,5 +1,3 @@
-import { MdOutlineSettings } from "react-icons/md";
-import { RiArrowDropDownLine } from "react-icons/ri";
 import UnitsDropdown from "./UnitsDropdown";
 
 function NavBar() {
@@ -13,15 +11,6 @@ function NavBar() {
             src="assets/images/logo.svg"
             alt="logo"
           />
-        </div>
-
-        {/* Units */}
-        <div>
-          <button className="flex items-center gap-1.5 bg-[#312f4b] pl-2 py-0.5 rounded-md">
-            <MdOutlineSettings />
-            <h>Units</h>
-            <RiArrowDropDownLine size={"30px"} />
-          </button>
         </div>
 
         {/* Dropdown */}
