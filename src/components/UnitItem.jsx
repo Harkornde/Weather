@@ -1,3 +1,5 @@
+import { FaCheck } from "react-icons/fa6";
+
 function UnitItem({ label, active, onClick }) {
   return (
     <button
@@ -11,4 +13,3 @@ function UnitItem({ label, active, onClick }) {
 }
 
 export default UnitItem;
-

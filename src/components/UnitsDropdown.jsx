@@ -13,13 +13,20 @@ function UnitsDropdown() {
   });
 
   // Handing Unit change.
-  const handleSystemChange = (newSystem) => {
+  function handleSystemChange(newSystem) {
     setSystem(newSystem);
     if (newSystem === "Metric") {
       setUnits({ temp: "Celsius", wind: "km/h", precip: "Millimeters" });
     } else {
       setUnits({ temp: "Fahrenheit", wind: "mph", precip: "Inches" });
     }
+  }
+
+  //Switching Between Unit
+  const handleUnitChange = (category, value) => {
+    // const newUnits = { ...units, [category]: value };
+    setUnits({ ...units, [category]: value });
+    console.log(`Unit changed: ${value}`);
   };
 
   return (
@@ -29,7 +36,7 @@ function UnitsDropdown() {
         <div onClick={() => setIsOpen((isopen) => !isopen)}>
           <button className="flex items-center gap-1.5 bg-[#312f4b] pl-2 py-0.5 rounded-md">
             <MdOutlineSettings />
-            <h>Units</h>
+            <h1>Units</h1>
             <RiArrowDropDownLine
               size={"24px"}
               className={`transition-transform duration-200 ${
@@ -69,8 +76,16 @@ function UnitsDropdown() {
             {/* Building the temperature */}
             <div>
               <p className="text-sm text-[#aeaeb7]">Temperature</p>
-              <UnitItem label="Celsius (°C)" />
-              <UnitItem label="Fahrenheit (°F)" />
+              <UnitItem
+                label="Celsius (°C)"
+                active={units.temp === "Celsius"}
+                onClick={() => handleUnitChange("temp", "Celsius")}
+              />
+              <UnitItem
+                label="Fahrenheit (°F)"
+                active={units.temp === "Fahrenheit"}
+                onClick={() => handleUnitChange("temp", "Fahrenheit")}
+              />
             </div>
 
             {/* Building the Wind speed */}
