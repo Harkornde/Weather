@@ -91,15 +91,31 @@ function UnitsDropdown() {
             {/* Building the Wind speed */}
             <div>
               <p className="text-sm text-[#aeaeb7]">Wind speed</p>
-              <UnitItem label="km/h" />
-              <UnitItem label="mph" />
+              <UnitItem
+                label="km/h"
+                active={units.wind === "km/h"}
+                onClick={() => handleUnitChange("wind", "km/h")}
+              />
+              <UnitItem
+                label="mph"
+                active={units.wind === "mph"}
+                onClick={() => handleUnitChange("wind", "mph")}
+              />
             </div>
 
             {/* Bilding the precipitation Menu */}
             <div>
               <p className="text-sm text-[#aeaeb7]">Wind speed</p>
-              <UnitItem label="Millimeters (mm)" />
-              <UnitItem label="Inches (in)" />
+              <UnitItem
+                label="Millimeters (mm)"
+                active={units.precip === "Millimeters"}
+                onClick={() => handleUnitChange("precip", "Millimeters")}
+              />
+              <UnitItem
+                label="Inches (in)"
+                active={units.precip === "Inches"}
+                onClick={() => handleUnitChange("precip", "Inches")}
+              />
             </div>
           </div>
         )}
