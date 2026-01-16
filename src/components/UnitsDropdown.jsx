@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import UnitItem from "./UnitItem";
 import { MdOutlineSettings } from "react-icons/md";
 import { RiArrowDropDownLine } from "react-icons/ri";
@@ -11,6 +11,19 @@ function UnitsDropdown() {
     wind: "km/h",
     precip: "Millimeters",
   });
+
+  const dropdownRef = useRef(null);
+
+// Close dropdown if clicking outside of it
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   // Handing Unit change.
   function handleSystemChange(newSystem) {
@@ -31,7 +44,7 @@ function UnitsDropdown() {
 
   return (
     <>
-      <div>
+      <div className="relative" ref={dropdownRef}>
         {/* Units */}
         <div onClick={() => setIsOpen((isopen) => !isopen)}>
           <button className="flex items-center gap-1.5 bg-[#312f4b] pl-2 py-0.5 rounded-md">
