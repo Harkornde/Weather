@@ -71,7 +71,7 @@ function UnitsDropdown() {
                     : "text-gray-400 hover:text-white"
                 }`}
               >
-                <h1 className="text-left">Switch to imperial</h1>
+                <h1 className="text-left ml-1 md:ml-2">Switch to imperial</h1>
               </button>
 
               <button
