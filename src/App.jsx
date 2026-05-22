@@ -1,5 +1,6 @@
 import NavBar from "./components/NavBar";
 import SearchBar from "./components/SearchBar";
+import Display from "./components/display/Display";
 
 function App() {
   return (
@@ -7,8 +8,7 @@ function App() {
       <div className="w-9/10 m-auto">
         <NavBar />
         <SearchBar />
-        <div></div>
-        <div></div>
+        <Display />
       </div>
     </>
   );
