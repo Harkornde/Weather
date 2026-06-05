@@ -22,6 +22,26 @@ function Daily() {
             <h1 className="font-bold text-7xl">68°</h1>
           </div>
         </div>
+
+        {/* Humidity Wind Precipitation */}
+        <div className="grid grid-cols-2 gap-4 mt-6">
+          <div className="bg-[#272541] rounded-2xl p-4">
+            <p className="text-xl text-[#aeaeb7]">Feels like</p>
+            <h1 className="text-3xl mt-4 text-[#d5d4d9]">18°</h1>
+          </div>
+          <div className=" bg-[#272541] rounded-2xl p-4">
+            <p className="text-xl text-[#aeaeb7]">Humidity</p>
+            <h1 className="text-3xl mt-4 text-[#d5d4d9]">46%</h1>
+          </div>
+          <div className=" bg-[#272541] rounded-2xl p-4">
+            <p className="text-xl text-[#aeaeb7]">Wind</p>
+            <h1 className="text-3xl mt-4 text-[#d5d4d9]">14km/h</h1>
+          </div>
+          <div className="bg-[#272541] rounded-2xl p-4">
+            <p className="text-xl text-[#aeaeb7]">Precipitation</p>
+            <h1 className="text-3xl mt-4 text-[#d5d4d9]">0mm</h1>
+          </div>
+        </div>
       </div>
     </>
   );
